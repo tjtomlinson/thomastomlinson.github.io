@@ -44,6 +44,16 @@
       margin: 60px auto;
     }
 
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .container img {
+      width: 150px;
+      margin-right: 15px;
+    }
+
     @media (max-width: 600px) {
   body {
     font-size: 60%; /* scales down all text */
@@ -61,7 +71,12 @@
   </nav>
 
   <div class="content">
-    <p>This is the Research page. More info coming soon!</p>
+    <div class="container">
+      <img src="images/Gaia_resonance_map_small.png" alt="gaia resonances">
+      <p>
+        Your text goes here next to the image.
+      </p>
+    </div>
   </div>
 </body>
 </html>
