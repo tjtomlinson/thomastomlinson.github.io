@@ -58,6 +58,17 @@
   body {
     font-size: 60%; /* scales down all text */
   }
+  .container {
+    flex-direction: column; /* stack image and text */
+    align-items: flex-start;
+  }
+
+  .container img {
+    width: 100%;      /* image scales to screen width */
+    max-width: 300px; /* prevents it getting huge */
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }
     
   </style>
