@@ -97,6 +97,19 @@
       align-items: center;
     }
 
+    .container wide-image {
+      width: 900px;
+      height: auto;
+      align-items: center;
+    }
+
+    /* Caption styling */
+  .container figcaption {
+    font-size: 0.9em;        /* slightly smaller than body text */
+    color: #555;             /* subtle color */
+    margin-top: 8px;         /* space between image and caption */
+  }
+
     @media (max-width: 600px) {
   body {
     font-size: 60%; /* scales down all text */
@@ -134,6 +147,14 @@
     align-items: center;
     margin-bottom: 10px;
   }
+
+  .container wide-image {
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+    align-items: center;
+    margin-bottom: 10px;
+  }
 }
     
   </style>
@@ -156,7 +177,8 @@
       </div>
     
       <div class="container">
-        <p><img src="images/Gaia_resonance_map_small.png" alt="gaia resonances"></p>
+        <p><img src="images/Gaia_resonance_map_small.png" alt="gaia resonances">
+        </p>
         <p>
           Most spiral galaxies, including the Milky Way, host a stellar bar. 
           This elongated structure introduces a non-axisymmetric gravitational potential that exerts 
@@ -170,7 +192,8 @@
         </p>
       </div>
       <div class="container">
-        <p><img src="images/e_lz.png" alt="E-L_z plot showing resonance"></p>
+        <p><wide-image src="images/ang_m_x_energy_w_resonances_centre_acc0251.png" alt="E-L_z plot showing resonance">
+        <figcaption>Figure 3 of Tomlinson et al. (2026)</figcaption></p>
         <p>
           The second plot shows an example of such an overdensity in a cosmological simulation. 
           These simulations allow us to distinguish between stars that formed in situ within the galaxy and 
