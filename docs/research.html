@@ -45,6 +45,15 @@
       max-width: 1000px;
     }
 
+    .research-box {
+      background-color: #ffffff;   /* box colour */
+      padding: 40px;
+      margin: 40px auto;
+      max-width: 1000px;
+    
+      border-radius: 15px;         /* rounded corners */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* subtle shadow */
+    }
 
     .container {
       display: flex;
@@ -57,23 +66,62 @@
     .container img {
       width: 300px;
       height: auto;
-      margin-right: 20px;
+      align-items: center;
     }
 
     @media (max-width: 600px) {
   body {
     font-size: 60%; /* scales down all text */
   }
+
+  /* Header flex container */
+  .research-header {
+    display: flex;
+    justify-content: space-between; /* title left, logo right */
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Title style */
+  .research-title {
+    font-size: 2em;
+    color: #222;
+    margin: 0;
+  }
+  
+  /* arXiv logo */
+  .arxiv-logo {
+    width: 40px;       /* adjust size */
+    height: auto;
+    display: block;
+    transition: opacity 0.3s;
+  }
+  
+  .arxiv-logo:hover {
+    opacity: 0.8;      /* subtle hover effect */
+  }
+
+  .research-box {
+      background-color: #ffffff;   /* box colour */
+      padding: 40px;
+      margin: 40px auto;
+      max-width: 600px;
+    
+      border-radius: 15px;         /* rounded corners */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* subtle shadow */
+    }
+      
   .container {
     flex-direction: column; /* stack image and text */
-    align-items: flex-start;
-    max-width: 600px;
+    align-items: center;
+    max-width: 550px;
   }
 
   .container img {
     width: 100%;      /* image scales to screen width */
     max-width: 300px; /* prevents it getting huge */
     margin: 0 auto;
+    align-items: center;
     margin-bottom: 10px;
   }
 }
@@ -89,32 +137,41 @@
   </nav>
 
   <div class="content">
-    <div class="container">
-      <p><img src="images/Gaia_resonance_map_small.png" alt="gaia resonances"></p>
-      <p>
-        Most spiral galaxies, including the Milky Way, host a stellar bar. 
-        This elongated structure introduces a non-axisymmetric gravitational potential that exerts 
-        torques on the surrounding stellar disk and halo. Through these torques, angular momentum can 
-        be exchanged between different galactic components. 
-        This exchange occurs at specific orbital frequencies that are in resonance with 
-        the pattern speed of the bar. Stars on resonant orbits respond coherently to the bar’s gravitational 
-        perturbation and can therefore share similar orbital properties. 
-        As a result, these stars may appear as overdensities in spaces defined by integrals of motion, 
-        such as energy and angular momentum. The image on the left illustrates three examples of such resonant orbits.
-      </p>
-    </div>
-    <div class="container">
-      <p><img src="images/e_lz.png" alt="E-L_z plot showing resonance"></p>
-      <p>
-        The second plot shows an example of such an overdensity in a cosmological simulation. 
-        These simulations allow us to distinguish between stars that formed in situ within the galaxy and 
-        those that were accreted through mergers with satellite galaxies. We find that this overdensity is 
-        particularly prominent in the accreted stellar population. 
-        However, it is not associated with any specific merger event; instead, it is produced by the galactic bar, 
-        specifically through the corotation and retrograde 1:1 resonances.
-        Structures like this can complicate the search for past accretion events in the Milky Way’s history, 
-        as internally driven dynamical processes can create overdensities that resemble the signatures of past mergers.
-      </p>
+    <div class="research-box">
+      <div class="research-header">
+        <h2 class="research-title">Bar resonances in the stellar halo of a cosmological simulation</h2>
+        <a href="https://arxiv.org/abs/2601.14409" target="_blank" class="arxiv-link">
+          <img src="images/arxiv-logo.png" alt="arXiv" class="arxiv-logo">
+        </a>
+      </div>
+    
+      <div class="container">
+        <p><img src="images/Gaia_resonance_map_small.png" alt="gaia resonances"></p>
+        <p>
+          Most spiral galaxies, including the Milky Way, host a stellar bar. 
+          This elongated structure introduces a non-axisymmetric gravitational potential that exerts 
+          torques on the surrounding stellar disk and halo. Through these torques, angular momentum can 
+          be exchanged between different galactic components. 
+          This exchange occurs at specific orbital frequencies that are in resonance with 
+          the pattern speed of the bar. Stars on resonant orbits respond coherently to the bar’s gravitational 
+          perturbation and can therefore share similar orbital properties. 
+          As a result, these stars may appear as overdensities in spaces defined by integrals of motion, 
+          such as energy and angular momentum. The image on the left illustrates three examples of such resonant orbits.
+        </p>
+      </div>
+      <div class="container">
+        <p><img src="images/e_lz.png" alt="E-L_z plot showing resonance"></p>
+        <p>
+          The second plot shows an example of such an overdensity in a cosmological simulation. 
+          These simulations allow us to distinguish between stars that formed in situ within the galaxy and 
+          those that were accreted through mergers with satellite galaxies. We find that this overdensity is 
+          particularly prominent in the accreted stellar population. 
+          However, it is not associated with any specific merger event; instead, it is produced by the galactic bar, 
+          specifically through the corotation and retrograde 1:1 resonances.
+          Structures like this can complicate the search for past accretion events in the Milky Way’s history, 
+          as internally driven dynamical processes can create overdensities that resemble the signatures of past mergers.
+        </p>
+      </div>
     </div>
   </div>
 </body>
