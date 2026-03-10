@@ -97,18 +97,18 @@
       align-items: center;
     }
 
-    .container wide-image {
-      width: 900px;
-      height: auto;
-      align-items: center;
+    .wide-image img {
+      width: 950px;      /* individual width */
+      max-width: 100%;   /* prevents it from overflowing the container */
+      height: auto;      /* keeps proportions correct */
     }
 
-    /* Caption styling */
-  .container figcaption {
-    font-size: 0.9em;        /* slightly smaller than body text */
-    color: #555;             /* subtle color */
-    margin-top: 8px;         /* space between image and caption */
-  }
+    .wide-image figcaption {
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 5px;
+    }
 
     @media (max-width: 600px) {
   body {
@@ -148,12 +148,10 @@
     margin-bottom: 10px;
   }
 
-  .container wide-image {
-    width: 95%;
-    height: auto;
-    margin: 0 auto;
-    align-items: center;
-    margin-bottom: 10px;
+  .wide-image img {
+    width: 100%;      /* individual width */
+    max-width: 100%;   /* prevents it from overflowing the container */
+    height: auto;      /* keeps proportions correct */
   }
 }
     
@@ -192,8 +190,11 @@
         </p>
       </div>
       <div class="container">
-        <p><wide-image src="images/ang_m_x_energy_w_resonances_centre_acc0251.png" alt="E-L_z plot showing resonance">
-        <figcaption>Figure 3 of Tomlinson et al. (2026)</figcaption></p>
+        <figure class="wide-image">
+          <img src="images/ang_m_x_energy_w_resonances_centre_acc0251.png" 
+              alt="E-L_z plot showing resonance">
+          <figcaption>Figure 3 of Tomlinson et al. (2026)</figcaption>
+        </figure>
         <p>
           The second plot shows an example of such an overdensity in a cosmological simulation. 
           These simulations allow us to distinguish between stars that formed in situ within the galaxy and 
