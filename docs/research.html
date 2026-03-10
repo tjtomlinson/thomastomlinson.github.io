@@ -45,6 +45,34 @@
       max-width: 1000px;
     }
 
+    /* Header flex container */
+    .research-header {
+      display: flex;
+      justify-content: space-between; /* title left, logo right */
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    
+    /* Title style */
+    .research-title {
+      font-size: 2em;
+      color: #222;
+      margin: 0;
+    }
+    
+    /* arXiv logo */
+    .arxiv-logo {
+      width: 40px;       /* adjust size */
+      height: auto;
+      display: block;
+      margin-left: 10px;
+      transition: opacity 0.3s;
+    }
+    
+    .arxiv-logo:hover {
+      opacity: 0.8;      /* subtle hover effect */
+    }
+
     .research-box {
       background-color: #ffffff;   /* box colour */
       padding: 40px;
@@ -72,33 +100,6 @@
     @media (max-width: 600px) {
   body {
     font-size: 60%; /* scales down all text */
-  }
-
-  /* Header flex container */
-  .research-header {
-    display: flex;
-    justify-content: space-between; /* title left, logo right */
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  
-  /* Title style */
-  .research-title {
-    font-size: 2em;
-    color: #222;
-    margin: 0;
-  }
-  
-  /* arXiv logo */
-  .arxiv-logo {
-    width: 40px;       /* adjust size */
-    height: auto;
-    display: block;
-    transition: opacity 0.3s;
-  }
-  
-  .arxiv-logo:hover {
-    opacity: 0.8;      /* subtle hover effect */
   }
 
   .research-box {
