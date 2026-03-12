@@ -189,18 +189,8 @@
   }
 }
 
-<script>
-  function toggleMenu() {
-    const links = document.querySelector('.nav-links');
-    if (links.style.display === 'flex') {
-      links.style.display = 'none';
-    } else {
-      links.style.display = 'flex';
-    }
-  }
-</script>
-
 </style>
+
 </head>
 
 <body>
@@ -221,6 +211,17 @@
       <a href="contact.html">Contact</a>
     </div>
   </nav>
+
+  <script>
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = 'none';
+    } else {
+      links.style.display = 'flex';
+    }
+  }
+</script>
 
   <div class="content">
     <h1>Thomas Tomlinson</h1>
