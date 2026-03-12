@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thomas Tomlinson</title>
+  <title>Thomas Tomlinson — Home</title>
   <link rel="icon" type="image/png" href="images/kilt_logo.png">
   
   <style>
@@ -26,23 +26,37 @@
       max-width: 100%;
       position: relative;
       overflow: hidden;
+      height: 80px;
     }
 
+    /* container for image + gradient */
+    .nav-image-wrapper {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 260px;
+    }
+
+    /* actual image */
     .nav-image {
       position: absolute;
       left: 0;
       top: 0;
-      width: 260px;
+      width: 100%;
       height: 100%;
+      background: url("images/kilt_plot.png") no-repeat left top;
+      background-size: contain;  /* entire image visible */
+    }
 
-      /* Two layers: gradient + image */
-      background:
-        linear-gradient(to right, rgba(34,34,34,0) 40%, #222 100%),
-        url("images/kilt_plot.png");
-
-      background-size: contain;          /* ensures full image is visible */
-      background-position: left top;     /* aligns image to very left, top */
-      background-repeat: no-repeat;      /* prevent tiling */
+    /* gradient overlay */
+    .nav-gradient {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(34,34,34,0) 40%, #222 100%);
     }
 
     nav a {
@@ -135,6 +149,24 @@
   .column {
     flex: 1 1 30%;
   }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;  /* align links left if you want */
+    height: auto;             /* let nav grow */
+    padding: 1em;
+  }
+
+  .nav-image-wrapper {
+    position: relative;       /* not absolute anymore */
+    width: 100%;
+    margin-bottom: 10px;      /* space between image and links */
+  }
+
+  nav a {
+    font-size: 1.5em;
+    margin: 0.3em 0;          /* vertical spacing for stacked links */
+  }
 }
 
     
@@ -144,7 +176,10 @@
 
 <body>
   <nav>
-    <div class="nav-image"></div>
+    <div class="nav-image-wrapper">
+      <div class="nav-image"></div>
+      <div class="nav-gradient"></div>
+    </div>
 
     <a href="index.html">Home</a>
     <a href="research.html">Research</a>
