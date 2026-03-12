@@ -32,16 +32,17 @@
       position: absolute;
       left: 0;
       top: 0;
-      height: 100%;
       width: 260px;
+      height: 100%;
 
+      /* Two layers: gradient + image */
       background:
-        linear-gradient(to right, rgba(34,34,34,0) 65%, #222 100%),
+        linear-gradient(to right, rgba(34,34,34,0) 40%, #222 100%),
         url("images/kilt_plot.png");
 
-      background-size: cover;
-      background-position: left center;
-      background-repeat: no-repeat;
+      background-size: contain;          /* ensures full image is visible */
+      background-position: left top;     /* aligns image to very left, top */
+      background-repeat: no-repeat;      /* prevent tiling */
     }
 
     nav a {
