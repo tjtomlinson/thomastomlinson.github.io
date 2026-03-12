@@ -165,28 +165,37 @@
   }
 
   .nav-links {
-    display: none;           /* hide menu by default */
+    display: flex;
     flex-direction: column;
     position: absolute;
-    top: 60px;               /* below header */
+    top: 60px;         /* below header */
     left: 50%;
     transform: translateX(-50%);
     background-color: #222;
     padding: 0.5em 0;
     border-radius: 5px;
+
+    max-height: 0;     /* hidden by default */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
   }
 
+  .nav-links.show {
+    max-height: 300px; /* menu opens */
+  }
+
+  /* Only show current link in collapsed state */
   .nav-links a {
+    display: none; 
     margin: 0.5em 1.5em;
     font-size: 1.2em;
-    display: block;
     text-align: center;
   }
 
-  /* Only show the current section in mobile header by default */
-  .nav-links a:not(.current) {
-    display: block;  /* will toggle via JS */
+  .nav-links a.current {
+    display: block;   /* always visible */
   }
+
 }
 
 </style>
@@ -200,7 +209,7 @@
       <div class="nav-gradient"></div>
     </div>
 
-    <!-- Hamburger icon for mobile -->
+    <!-- Hamburger icon -->
     <div class="hamburger" onclick="toggleMenu()">☰</div>
 
     <!-- Links -->
@@ -215,13 +224,21 @@
   <script>
   function toggleMenu() {
     const links = document.querySelector('.nav-links');
-    if (links.style.display === 'flex') {
-      links.style.display = 'none';
+    links.classList.toggle('show');
+
+    // When menu is opened, show all links
+    if (links.classList.contains('show')) {
+      links.querySelectorAll('a').forEach(link => link.style.display = 'block');
     } else {
-      links.style.display = 'flex';
+      // When closed, hide all except current
+      links.querySelectorAll('a').forEach(link => {
+        if (!link.classList.contains('current')) {
+          link.style.display = 'none';
+        }
+      });
     }
   }
-</script>
+  </script>
 
   <div class="content">
     <h1>Thomas Tomlinson</h1>

@@ -16,23 +16,60 @@
 
     nav {
       background-color: #222;
-      padding: 1em;
       display: flex;
-      justify-content: center;
       font-size: 2em;
-      max-width: 100%;
+      align-items: center;
+      justify-content: center; /* desktop links centered */
+      position: relative;
+      height: 80px;
+      padding: 0 1em;
     }
 
-    nav a {
+    .nav-image-wrapper {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 260px;
+      height: 100%;
+    }
+
+    .nav-image {
+      width: 100%;
+      height: 100%;
+      background: url("images/kilt_plot.png") no-repeat left top;
+      background-size: contain;
+    }
+
+    .nav-gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(34,34,34,0) 40%, #222 100%);
+    }
+
+    .nav-links a {
       color: #ebb8d9;
       text-decoration: none;
-      margin: 0 auto;
+      margin: 0 1em;
       font-weight: bold;
       transition: color 0.3s;
+      position: relative;
+      z-index: 1;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       color: #fff;
+    }
+
+    /* Hamburger hidden on desktop */
+    .hamburger {
+      display: none;
+      font-size: 2em;
+      color: #ebb8d9;
+      cursor: pointer;
+      z-index: 2;
     }
 
     .content {
@@ -77,6 +114,51 @@
     @media (max-width: 600px) {
   body {
     font-size: 60%; /* scales down all text */
+  }
+
+  nav {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 1em;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;         /* below header */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #222;
+    padding: 0.5em 0;
+    border-radius: 5px;
+
+    max-height: 0;     /* hidden by default */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .nav-links.show {
+    max-height: 300px; /* menu opens */
+  }
+
+  /* Only show current link in collapsed state */
+  .nav-links a {
+    display: none; 
+    margin: 0.5em 1.5em;
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  .nav-links a.current {
+    display: block;   /* always visible */
   }
 }
     
