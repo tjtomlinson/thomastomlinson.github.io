@@ -188,7 +188,16 @@
   }
 }
 
-    
+<script>
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = 'none';
+    } else {
+      links.style.display = 'flex';
+    }
+  }
+</script>
 
   </style>
 </head>
